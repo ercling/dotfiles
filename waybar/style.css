@@ -1,22 +1,26 @@
+@define-color main_bg #fafafb;
+@define-color text_fg #292b2e;
+@define-color arrow rgba(0, 0, 0, 0.12);
+
 * {
 	font-size: 11px;
 	font-family: "Ubuntu Nerd Font";
 }
 
 window#waybar {
-	background: #292b2e;
-	color: #fdf6e3;
+	background: @main_bg;
+	color: @text_fg;
 }
 
 #custom-right-arrow-dark,
 #custom-left-arrow-dark {
-	color: #1a1a1a;
+	color: @arrow;
 }
 #custom-right-arrow-light,
 #custom-left-arrow-light {
-	color: #292b2e;
-	background: #1a1a1a;
-  padding: 0;
+	color: @main_bg;
+	background: @arrow;
+	padding: 0;
 }
 
 #workspaces,
@@ -36,12 +40,12 @@ window#waybar {
 #idle_inhibitor,
 #language,
 #tray {
-	background: #1a1a1a;
+	background: @arrow;
 }
 
 #workspaces button {
 	padding: 0 2px;
-	color: #fdf6e3;
+	color: @text_fg;
 }
 #workspaces button.focused {
 	color: #268bd2;
@@ -52,11 +56,11 @@ window#waybar {
 }
 #workspaces button:hover {
 	background: #f93333;
-	border: #1a1a1a;
+	border: @arrow;
 	padding: 0 3px;
 }
 #workspaces button.active {
-	background: #292b2e;
+	background: @main_bg;
 }
 
 #pulseaudio {

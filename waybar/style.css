@@ -1,15 +1,16 @@
-@define-color main_bg #fafafb;
-@define-color text_fg #292b2e;
-@define-color arrow rgba(0, 0, 0, 0.12);
+@define-color main_bg #292b2e;
+@define-color text_fg #fafafb;
+@define-color arrow #1a1a1a;
 
 * {
-	font-size: 11px;
+	font-size: 12px;
 	font-family: "Ubuntu Nerd Font";
 }
 
 window#waybar {
-	background: @main_bg;
 	color: @text_fg;
+	background-color: shade(@main_bg, 0.9);
+  	border: 2px solid alpha(#181926, 0.3);
 }
 
 #custom-right-arrow-dark,
@@ -23,7 +24,7 @@ window#waybar {
 	padding: 0;
 }
 
-#workspaces,
+/* #workspaces,
 #clock.1,
 #clock.2,
 #clock.3,
@@ -39,9 +40,26 @@ window#waybar {
 #temperature,
 #idle_inhibitor,
 #language,
-#tray {
+#tray,
+#power-profiles-daemon {
 	background: @arrow;
+} */
+
+.modules-right {
+	background: @arrow;
+	/* margin-left: 0px;
+	padding: 0px 4px; */
 }
+
+.modules-left {
+	background: @arrow;
+	/* margin-left: 0px;
+	padding: 0px 4px; */
+}
+
+/* #window {
+	background: @main_bg;
+} */
 
 #workspaces button {
 	padding: 0 2px;
@@ -60,7 +78,7 @@ window#waybar {
 	padding: 0 3px;
 }
 #workspaces button.active {
-	background: @main_bg;
+	background: @arrow;
 }
 
 #pulseaudio {
